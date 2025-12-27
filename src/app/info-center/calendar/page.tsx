@@ -1,15 +1,11 @@
-"use client"
+﻿import { Metadata } from "next"
+import { InfoCenterCalendarPage } from "@/pages/InfoCenterCalendarPage"
 
-import React from "react"
-import { GenericSubPage } from "@/components/shared/GenericSubPage"
+export const metadata: Metadata = {
+    title: "Calendar | BAAFA",
+    description: "Upcoming events and ceremonies",
+}
 
-export default function CalendarPage() {
-    return (
-        <GenericSubPage
-            title="Calendar"
-            description="Upcoming events, drills, conventions, and community ceremonies."
-            parentHref="/info-center"
-            parentLabel="Info Center"
-        />
-    )
+export default function Page() {
+    return <InfoCenterCalendarPage />
 }

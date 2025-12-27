@@ -1,15 +1,11 @@
-"use client"
+﻿import { Metadata } from "next"
+import { AdvocacyLegislativePage } from "@/pages/AdvocacyLegislativePage"
 
-import React from "react"
-import { GenericSubPage } from "@/components/shared/GenericSubPage"
+export const metadata: Metadata = {
+    title: "Legislative | BAAFA",
+    description: "Tracking bills and advocating for veterans rights",
+}
 
-export default function LegislativePage() {
-    return (
-        <GenericSubPage
-            title="Legislative"
-            description="Tracking bills and advocating for veterans' rights in Washington D.C."
-            parentHref="/advocacy"
-            parentLabel="Advocacy"
-        />
-    )
+export default function Page() {
+    return <AdvocacyLegislativePage />
 }

@@ -1,24 +1,11 @@
-"use client"
+﻿import { Metadata } from "next"
+import { InfoCenterPage } from "@/pages/InfoCenterPage"
 
-import * as React from "react"
-import { CategoryPage } from "@/components/shared/CategoryPage"
+export const metadata: Metadata = {
+    title: "Information Center | BAAFA Resources & Training",
+    description: "Access BAAFA event calendar, training materials, and honor & remembrance archives.",
+}
 
-export default function InfoCenterPage() {
-    const [data, setData] = React.useState<any>(null)
-
-    React.useEffect(() => {
-        fetch("/data.json")
-            .then((res) => res.json())
-            .then((d) => setData(d["info-center"]))
-    }, [])
-
-    if (!data) return <div className="flex h-screen items-center justify-center text-baafa-gold">Loading...</div>
-
-    return (
-        <CategoryPage
-            title="Information Center"
-            summary={data.summary}
-            sections={data.sections}
-        />
-    )
+export default function Page() {
+    return <InfoCenterPage />
 }

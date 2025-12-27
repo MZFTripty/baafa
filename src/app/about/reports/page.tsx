@@ -1,22 +1,11 @@
-"use client"
+﻿import { Metadata } from "next"
+import { AboutReportsPage } from "@/pages/AboutReportsPage"
 
-import React from "react"
-import { GenericSubPage } from "@/components/shared/GenericSubPage"
+export const metadata: Metadata = {
+    title: "Reports | BAAFA",
+    description: "Transparency through annual and financial reports",
+}
 
-export default function ReportsPage() {
-    const data = {
-        title: "Reports",
-        description: "Transparency and accountability through our annual and financial reports. We believe in open access to our operational metrics.",
-        image: "/images/about_reports.png"
-    }
-
-    return (
-        <GenericSubPage
-            title={data.title}
-            description={data.description}
-            image={data.image}
-            parentHref="/about"
-            parentLabel="About"
-        />
-    )
+export default function Page() {
+    return <AboutReportsPage />
 }

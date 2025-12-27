@@ -1,24 +1,11 @@
-"use client"
+﻿import { Metadata } from "next"
+import { AdvocacyPage } from "@/pages/AdvocacyPage"
 
-import * as React from "react"
-import { CategoryPage } from "@/components/shared/CategoryPage"
+export const metadata: Metadata = {
+    title: "Advocacy | BAAFA - Fighting for Veterans Rights",
+    description: "BAAFA advocacy initiatives including veteran suicide prevention, legislative action, national affairs engagement, and youth support programs.",
+}
 
-export default function AdvocacyPage() {
-    const [data, setData] = React.useState<any>(null)
-
-    React.useEffect(() => {
-        fetch("/data.json")
-            .then((res) => res.json())
-            .then((d) => setData(d.advocacy))
-    }, [])
-
-    if (!data) return <div className="flex h-screen items-center justify-center text-baafa-gold">Loading...</div>
-
-    return (
-        <CategoryPage
-            title="Advocacy"
-            summary={data.summary}
-            sections={data.sections}
-        />
-    )
+export default function Page() {
+    return <AdvocacyPage />
 }

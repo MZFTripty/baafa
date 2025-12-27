@@ -1,22 +1,11 @@
-"use client"
+﻿import { Metadata } from "next"
+import { AboutMediaToolkitPage } from "@/pages/AboutMediaToolkitPage"
 
-import React from "react"
-import { GenericSubPage } from "@/components/shared/GenericSubPage"
+export const metadata: Metadata = {
+    title: "Media Toolkit | BAAFA",
+    description: "Official brand assets and press materials",
+}
 
-export default function MediaToolkitPage() {
-    const data = {
-        title: "Media Toolkit",
-        description: "OFFICIAL assets, brand guidelines, and press materials for BAAFA representatives and media partners.",
-        image: "/images/about_media.png"
-    }
-
-    return (
-        <GenericSubPage
-            title={data.title}
-            description={data.description}
-            image={data.image}
-            parentHref="/about"
-            parentLabel="About"
-        />
-    )
+export default function Page() {
+    return <AboutMediaToolkitPage />
 }

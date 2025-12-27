@@ -1,15 +1,11 @@
-"use client"
+﻿import { Metadata } from "next"
+import { InfoCenterBangladeshiLegionTrainingPage } from "@/pages/InfoCenterBangladeshiLegionTrainingPage"
 
-import React from "react"
-import { GenericSubPage } from "@/components/shared/GenericSubPage"
+export const metadata: Metadata = {
+    title: "Training | BAAFA",
+    description: "Online courses and orientation materials",
+}
 
-export default function LegionTrainingPage() {
-    return (
-        <GenericSubPage
-            title="Bangladeshi Legion Training"
-            description="Online courses and orientation materials for members and officers."
-            parentHref="/info-center"
-            parentLabel="Info Center"
-        />
-    )
+export default function Page() {
+    return <InfoCenterBangladeshiLegionTrainingPage />
 }

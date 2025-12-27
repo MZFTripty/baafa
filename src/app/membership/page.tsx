@@ -1,24 +1,11 @@
-"use client"
+﻿import { Metadata } from "next"
+import { MembershipPage } from "@/pages/MembershipPage"
 
-import * as React from "react"
-import { CategoryPage } from "@/components/shared/CategoryPage"
+export const metadata: Metadata = {
+    title: "Membership & Services | BAAFA",
+    description: "Join BAAFA to access exclusive member benefits, discounts, resources, and comprehensive veterans services.",
+}
 
-export default function MembershipPage() {
-    const [data, setData] = React.useState<any>(null)
-
-    React.useEffect(() => {
-        fetch("/data.json")
-            .then((res) => res.json())
-            .then((d) => setData(d.membership))
-    }, [])
-
-    if (!data) return <div className="flex h-screen items-center justify-center text-baafa-gold">Loading...</div>
-
-    return (
-        <CategoryPage
-            title="Membership & Services"
-            summary={data.summary}
-            sections={data.sections}
-        />
-    )
+export default function Page() {
+    return <MembershipPage />
 }

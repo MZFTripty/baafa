@@ -1,15 +1,11 @@
-"use client"
+﻿import { Metadata } from "next"
+import { AdvocacyNationalAffairsPage } from "@/pages/AdvocacyNationalAffairsPage"
 
-import React from "react"
-import { GenericSubPage } from "@/components/shared/GenericSubPage"
+export const metadata: Metadata = {
+    title: "National Affairs | BAAFA",
+    description: "Engagement with national security and foreign relations",
+}
 
-export default function NationalAffairsPage() {
-    return (
-        <GenericSubPage
-            title="National Affairs"
-            description="Engagement with national security, foreign relations, and civil defense."
-            parentHref="/advocacy"
-            parentLabel="Advocacy"
-        />
-    )
+export default function Page() {
+    return <AdvocacyNationalAffairsPage />
 }

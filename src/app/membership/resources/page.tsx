@@ -1,15 +1,11 @@
-"use client"
+﻿import { Metadata } from "next"
+import { MembershipResourcesPage } from "@/pages/MembershipResourcesPage"
 
-import React from "react"
-import { GenericSubPage } from "@/components/shared/GenericSubPage"
+export const metadata: Metadata = {
+    title: "Resources | BAAFA",
+    description: "Tools and handbooks for members",
+}
 
-export default function ResourcesPage() {
-    return (
-        <GenericSubPage
-            title="Resources"
-            description="Tools, handbooks, and kits designed to help members succeed in and out of uniform."
-            parentHref="/membership"
-            parentLabel="Membership"
-        />
-    )
+export default function Page() {
+    return <MembershipResourcesPage />
 }

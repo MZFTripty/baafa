@@ -1,15 +1,11 @@
-"use client"
+﻿import { Metadata } from "next"
+import { MembershipRenewMembershipPage } from "@/pages/MembershipRenewMembershipPage"
 
-import React from "react"
-import { GenericSubPage } from "@/components/shared/GenericSubPage"
+export const metadata: Metadata = {
+    title: "Renew Membership | BAAFA",
+    description: "Stay connected and continue your support",
+}
 
-export default function RenewMembershipPage() {
-    return (
-        <GenericSubPage
-            title="Renew Membership"
-            description="Stay connected and continue your support for our shared mission."
-            parentHref="/membership"
-            parentLabel="Membership"
-        />
-    )
+export default function Page() {
+    return <MembershipRenewMembershipPage />
 }

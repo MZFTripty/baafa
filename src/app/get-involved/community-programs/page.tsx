@@ -1,15 +1,11 @@
-"use client"
+﻿import { Metadata } from "next"
+import { GetInvolvedCommunityProgramsPage } from "@/pages/GetInvolvedCommunityProgramsPage"
 
-import React from "react"
-import { GenericSubPage } from "@/components/shared/GenericSubPage"
+export const metadata: Metadata = {
+    title: "Community Programs | BAAFA",
+    description: "Local service projects and patriotic observances",
+}
 
-export default function CommunityProgramsPage() {
-    return (
-        <GenericSubPage
-            title="Community Programs"
-            description="Local neighborhood service projects and patriotic observances."
-            parentHref="/get-involved"
-            parentLabel="Get Involved"
-        />
-    )
+export default function Page() {
+    return <GetInvolvedCommunityProgramsPage />
 }

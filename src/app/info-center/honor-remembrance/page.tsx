@@ -1,15 +1,11 @@
-"use client"
+﻿import { Metadata } from "next"
+import { InfoCenterHonorRemembrancePage } from "@/pages/InfoCenterHonorRemembrancePage"
 
-import React from "react"
-import { GenericSubPage } from "@/components/shared/GenericSubPage"
+export const metadata: Metadata = {
+    title: "Honor & Remembrance | BAAFA",
+    description: "Archiving service and sacrifice",
+}
 
-export default function HonorRemembrancePage() {
-    return (
-        <GenericSubPage
-            title="Honor & Remembrance"
-            description="Archiving the service and sacrifice of our heroes."
-            parentHref="/info-center"
-            parentLabel="Info Center"
-        />
-    )
+export default function Page() {
+    return <InfoCenterHonorRemembrancePage />
 }

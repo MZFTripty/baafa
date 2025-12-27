@@ -1,15 +1,11 @@
-"use client"
+﻿import { Metadata } from "next"
+import { GetInvolvedScholarshipsPage } from "@/pages/GetInvolvedScholarshipsPage"
 
-import React from "react"
-import { GenericSubPage } from "@/components/shared/GenericSubPage"
+export const metadata: Metadata = {
+    title: "Scholarships | BAAFA",
+    description: "Financial aid for children of members",
+}
 
-export default function ScholarshipsPage() {
-    return (
-        <GenericSubPage
-            title="Scholarships"
-            description="Financial aid for children of members and outstanding youth leaders."
-            parentHref="/get-involved"
-            parentLabel="Get Involved"
-        />
-    )
+export default function Page() {
+    return <GetInvolvedScholarshipsPage />
 }
