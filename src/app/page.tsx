@@ -190,32 +190,34 @@ export default function Home() {
       </section>
 
       {/* 1.4 Empowering America - High Contrast Cards */}
-      <section className="relative py-24 bg-baafa-red overflow-hidden shadow-[inset_0_0_80px_rgba(0,0,0,0.2)]">
-        <div className="absolute inset-0 bg-flag-usa opacity-15 mix-blend-overlay scale-125 rotate-6" />
+      <section className="relative py-24 bg-gradient-to-b from-blue-500 to-red-100 overflow-hidden shadow-[inset_0_0_120px_rgba(0,0,0,0.3)]">
+        <div className="absolute inset-0 bg-flag-usa opacity-20 mix-blend-overlay scale-125 rotate-6" />
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center space-y-20 relative z-10">
-          <div className="space-y-4">
-            <h2 className="text-6xl font-black text-white uppercase tracking-tighter italic">
-              Empowering <span className="text-baafa-navy underline decoration-baafa-gold decoration-4 underline-offset-8">America</span>
+          <div className="space-y-6">
+            <h2 className="text-5xl font-[1000] text-white uppercase tracking-tighter italic">
+              Empowering <span className="text-baafa-navy underline decoration-white decoration-8 underline-offset-12">America</span>
             </h2>
-            <p className="mx-auto max-w-3xl text-xl text-white font-black leading-relaxed uppercase tracking-wide italic">
+            <p className="mx-auto max-w-3xl text-2xl text-white font-black leading-relaxed uppercase tracking-tight italic bg-black/10 backdrop-blur-sm p-4 rounded-2xl">
               {data.empowerment.description}
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-10 md:grid-cols-3">
             {data.empowerment.resources.map((resource: any, i: number) => (
-              <GlassCard key={resource.id} className="h-full flex flex-col items-center text-center p-10 gap-8 group border border-white/20 hover:bg-white shadow-xl bg-white/10 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="h-16 w-16 rounded-2xl bg-white flex items-center justify-center text-baafa-red shadow-lg ring-0 group-hover:ring-8 ring-white/20 transition-all duration-300">
-                  {resource.id === 'member' && <Users className="h-8 w-8" />}
-                  {resource.id === 'education' && <GraduationCap className="h-8 w-8" />}
-                  {resource.id === 'heart' && <Heart className="h-8 w-8" />}
+              <GlassCard key={resource.id} className="h-full flex flex-col items-center text-center p-12 gap-10 group border-2 border-white/30 hover:border-baafa-gold bg-white/95 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.4)] transition-all duration-300 hover:-translate-y-4">
+                <div className="h-16 w-16 rounded-2xl bg-baafa-navy flex items-center justify-center text-baafa-gold shadow-2xl group-hover:bg-baafa-red group-hover:text-white transition-all duration-300 scale-110">
+                  {resource.id === 'member' && <Users className="h-10 w-10" />}
+                  {resource.id === 'education' && <GraduationCap className="h-10 w-10" />}
+                  {resource.id === 'health' && <Heart className="h-10 w-10" />}
                 </div>
-                <div className="space-y-3">
-                  <h3 className="text-2xl font-black text-white group-hover:text-baafa-red uppercase tracking-tighter transition-colors italic">{resource.title}</h3>
-                  <p className="text-sm text-white font-bold leading-relaxed transition-colors group-hover:text-baafa-navy/80">{resource.description}</p>
+                <div className="space-y-4">
+                  <h3 className="text-3xl font-[1000] text-baafa-navy group-hover:text-baafa-red uppercase tracking-tighter transition-colors italic">{resource.title}</h3>
+                  <p className="text-lg text-baafa-navy/80 font-bold leading-relaxed transition-colors">{resource.description}</p>
                 </div>
-                <Button className="mt-auto bg-white text-[#B22234] hover:bg-baafa-gold hover:text-baafa-navy font-black tracking-widest rounded-xl h-12 w-full text-sm shadow-lg uppercase italic transition-all duration-300">PORTAL ACCESS</Button>
+                <Button className="mt-auto bg-gradient-to-r from-baafa-navy to-baafa-red text-white hover:bg-baafa-red font-black tracking-[0.2em] rounded-xl h-14 w-full text-base shadow-xl uppercase italic transition-all duration-300">
+                  SECURE ACCESS
+                </Button>
               </GlassCard>
             ))}
           </div>
@@ -227,7 +229,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col items-center gap-24">
             <div className="text-center space-y-4">
-              <h2 className="text-6xl font-black text-baafa-navy uppercase tracking-tighter italic">Info <span className="text-baafa-red">Center</span></h2>
+              <h2 className="text-5xl font-black text-baafa-navy uppercase tracking-tighter italic">Info <span className="text-baafa-red">Center</span></h2>
               <div className="h-1.5 w-32 bg-baafa-gold mx-auto rounded-full shadow-md" />
             </div>
 

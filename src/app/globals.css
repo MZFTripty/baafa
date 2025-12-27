@@ -31,6 +31,12 @@
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
 
+  --color-baafa-red: var(--baafa-red);
+  --color-baafa-navy: var(--baafa-navy);
+  --color-baafa-green: var(--baafa-green);
+  --color-baafa-gold: var(--baafa-gold);
+  --color-baafa-crimson: var(--baafa-crimson);
+
   @keyframes accordion-down {
     from {
       height: 0;
@@ -76,14 +82,14 @@
     --radius: 2rem;
 
     /* Vibrant Glow Tokens */
-    --vibrant-navy: 222 47% 15%;
+    --vibrant-navy: 222 47% 25%;
     --vibrant-green: 156 100% 20%;
     --vibrant-crimson: 350 100% 35%;
     --vibrant-gold: 45 60% 55%;
 
     /* Custom BAAFA Tokens */
     --baafa-green: hsl(156 100% 15%);
-    --baafa-navy: hsl(222 47% 4%);
+    --baafa-navy: hsl(222, 66%, 24%);
     --baafa-red: hsl(350 100% 35%);
     --baafa-gold: hsl(45 60% 50%);
     --baafa-crimson: hsl(350 100% 35%);

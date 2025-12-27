@@ -1,0 +1,119 @@
+---
+trigger: always_on
+---
+
+It is a Bangladeshi American Armed Forces Association(BAAFA) organization portfolio project.
+
+1. Home page
+1.1 Navbar
+1.1.1 logo (left corner)
+1.1.2 Join
+1.1.3 Renew
+1.1.3 Donate
+(rest of three options are at right corner)
+
+1.2 Banner
+- in left side , a title of BAAFA , 2/3 lines short description , two buttons (join as member and about us)
+1.2.1 About
+1.2.2 Advocacy
+1.2.3 Membership & services
+1.2.4 Get involved
+1.2.5 Information center
+(all these options are at top right corner)
+-in right side a BD army group pic which is located at BAAFA
+
+1.3 Our Impact
+- left side (1/3 part) , founder image (LT Amin. Founder of BAAFA)
+- in rest of 2/3 part, about all the part of this organization break into small part with main information with scrolling system
+
+1.4 Empowering America Through Community Spirit
+-short description
+- two button (become a member and find a post)
+1.4.1 Member resources
+1.4.2 Education resources
+1.4.3 Health resources
+(these 3 be cards and they are individual page)
+
+1.5 Information center
+- media
+- publications
+- training
+( give some info and show view more option then go to information center page)
+
+1.6 Footer
+
+2. About page
+2.1 organization
+2.2 leadership
+2.3 reports
+2.4 media toolkit
+2.5 Bangladeshi legion family
+2.6 all about ( above 5 points summary in here)
+( all the options would be individual pages)
+
+3. Advocacy
+3.1 be the one
+3.2 legislative
+3.3 national affairs
+3.4 youth support
+3.5 advocacy center ( above 4 points summary in here)
+( all the options would be individual pages)
+
+4. Membership & services
+4.1 join the Bangladeshi legion
+4.2 renew membership
+4.3 member discount
+4.4 resources
+4.5 Veterans Services
+4.6 Membership & Services ( above 5 points summary in here)
+( all the options would be individual pages)
+
+5. Get involved
+5.1 Youth Programs
+5.2 Community Programs
+5.3 National Meetings
+5.4 Scholarships
+5.5 all programs ( above 4 points summary in here)
+( all the options would be individual pages)
+
+6. Information center
+6.1 Calendar
+6.2 Bangladeshi Legion Training
+6.3 Honor & Remembrance
+6.4 All information center ( above 3 points summary in here)
+( all the options would be individual pages)
+
+
+( make this website:
+-responsive for any device,
+-more impressive, 
+-eye catching, 
+-animated components, 
+-3D effects, 
+-glassy, 
+-combination of America and Bangladeshi flag theme and also color,
+-🇧🇩 🇺🇸 Unified color system (flags + military tone)
+-Glassmorphism rules (blur, opacity, glow)
+-Motion language (page transitions, hover, scroll reveal)
+-Typography scale ready for Tailwind config
+
+This ensures the site looks:
+-Premium
+-Patriotic
+-Modern
+-Respectful
+
+using library: 
+-tailwind css ,
+-shadcn, 
+-framer motion, 
+-icons, 
+-animations 
+
+now you use different data.json file in public folder for temporary data so that i can fetch api after creating the backend side. you just only create fronted side and fetch the data in data.json file because i build the backend with using another language) 
+
+
+
+
+
+ 
