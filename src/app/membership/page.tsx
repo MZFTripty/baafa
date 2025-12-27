@@ -9,7 +9,7 @@ export default function MembershipPage() {
     React.useEffect(() => {
         fetch("/data.json")
             .then((res) => res.json())
-            .then((d) => setData(d.membershipAndServices))
+            .then((d) => setData(d.membership))
     }, [])
 
     if (!data) return <div className="flex h-screen items-center justify-center text-baafa-gold">Loading...</div>

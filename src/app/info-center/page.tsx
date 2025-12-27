@@ -9,7 +9,7 @@ export default function InfoCenterPage() {
     React.useEffect(() => {
         fetch("/data.json")
             .then((res) => res.json())
-            .then((d) => setData(d.infoCenter))
+            .then((d) => setData(d["info-center"]))
     }, [])
 
     if (!data) return <div className="flex h-screen items-center justify-center text-baafa-gold">Loading...</div>

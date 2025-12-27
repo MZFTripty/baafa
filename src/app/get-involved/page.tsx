@@ -9,7 +9,7 @@ export default function GetInvolvedPage() {
     React.useEffect(() => {
         fetch("/data.json")
             .then((res) => res.json())
-            .then((d) => setData(d.getInvolved))
+            .then((d) => setData(d["get-involved"]))
     }, [])
 
     if (!data) return <div className="flex h-screen items-center justify-center text-baafa-gold">Loading...</div>
