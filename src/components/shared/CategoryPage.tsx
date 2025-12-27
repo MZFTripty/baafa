@@ -34,8 +34,8 @@ export function CategoryPage({ title, summary, sections, accentColor = "baafa-go
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            animate={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 15 }}
+                            animate={{ opacity: 1, y: 0 }}
                             className="space-y-10"
                         >
                             <div className="flex items-center gap-4 text-baafa-red">
@@ -58,10 +58,10 @@ export function CategoryPage({ title, summary, sections, accentColor = "baafa-go
                         {/* Optional Hero Image */}
                         {heroImage && (
                             <motion.div
-                                initial={{ opacity: 0, x: 30 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.2 }}
-                                className="relative hidden lg:block"
+                                initial={{ opacity: 0, scale: 0.98 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.1 }}
+                                className="relative mt-12 lg:mt-0"
                             >
                                 <div className="relative aspect-video w-full overflow-hidden rounded-[2rem] border-8 border-white shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
                                     <div className="absolute inset-0 bg-baafa-navy/20 mix-blend-multiply z-10" />

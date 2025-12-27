@@ -134,10 +134,10 @@ export function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid gap-20 lg:grid-cols-2 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true, amount: 0.1 }}
               className="space-y-12"
             >
               <div className="space-y-4 text-left">
@@ -165,10 +165,10 @@ export function HomePage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true, amount: 0.1 }}
               className="relative"
             >
               <div className="relative aspect-[3/4] overflow-hidden rounded-[3rem] border-8 border-white shadow-xl">
