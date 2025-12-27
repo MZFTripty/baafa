@@ -19,6 +19,7 @@ export default function AboutPage() {
             title="About BAAFA"
             summary={data.summary}
             sections={data.sections}
+            heroImage={data.heroImage}
         />
     )
 }

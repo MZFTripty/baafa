@@ -115,36 +115,42 @@
         ]
     },
     "about": {
+        "heroImage": "/baafa_army_hero_v3.png",
         "summary": "BAAFA stands as a pillar of support and a voice of advocacy for Bangladeshi Americans in the U.S. Armed Forces, uniting our heritage with our patriotic duty.",
         "sections": [
             {
                 "id": "organization",
                 "title": "Organization",
                 "description": "Learn about our structure, mission, and the history of BAAFA.",
+                "image": "/images/about_org.png",
                 "href": "/about/organization"
             },
             {
                 "id": "leadership",
                 "title": "Leadership",
                 "description": "Meet the dedicated officers and board members guiding our association.",
+                "image": "/images/about_lead.png",
                 "href": "/about/leadership"
             },
             {
                 "id": "reports",
                 "title": "Reports",
                 "description": "Transparency and accountability through our annual and financial reports.",
+                "image": "/images/about_reports.png",
                 "href": "/about/reports"
             },
             {
                 "id": "media-toolkit",
                 "title": "Media Toolkit",
                 "description": "OFFICIAL assets, brand guidelines, and press materials for BAAFA representatives.",
+                "image": "/images/about_media.png",
                 "href": "/about/media-toolkit"
             },
             {
                 "id": "bangladeshi-legion-family",
                 "title": "Bangladeshi Legion Family",
                 "description": "Supporting the broader community of families and veterans across the nation.",
+                "image": "/images/about_family.png",
                 "href": "/about/bangladeshi-legion-family"
             }
         ]
