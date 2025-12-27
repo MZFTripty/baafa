@@ -199,3 +199,30 @@
   border-radius: 5px;
   border: 3px solid #002868;
 }
+
+/* Sidebar scrollbar - FORCED CLASSIC UI */
+.sidebar-scrollbar {
+  scrollbar-width: auto !important;
+  scrollbar-color: #888 #eee !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar {
+  width: 12px !important;
+  display: block !important;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-track {
+  background: #eee !important;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2) !important;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-thumb {
+  background: #888 !important;
+  border-radius: 10px !important;
+  border: 3px solid #eee !important;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555 !important;
+}
