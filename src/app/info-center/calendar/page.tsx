@@ -1,5 +1,5 @@
 ﻿import { Metadata } from "next"
-import { InfoCenterCalendarPage } from "@/pages/InfoCenterCalendarPage"
+import { InfoCenterCalendarPage } from "@/views/InfoCenterCalendarPage"
 
 export const metadata: Metadata = {
     title: "Calendar | BAAFA",

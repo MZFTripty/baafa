@@ -1,5 +1,5 @@
 ﻿import { Metadata } from "next"
-import { AdvocacyYouthSupportPage } from "@/pages/AdvocacyYouthSupportPage"
+import { AdvocacyYouthSupportPage } from "@/views/AdvocacyYouthSupportPage"
 
 export const metadata: Metadata = {
     title: "Youth Support | BAAFA",

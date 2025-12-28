@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import { HomePage } from "@/pages/HomePage"
+import { HomePage } from "@/views/HomePage"
 
 export const metadata: Metadata = {
   title: "BAAFA - Bangladeshi American Armed Forces Association",

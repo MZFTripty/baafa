@@ -1,5 +1,5 @@
 ﻿import { Metadata } from "next"
-import { GetInvolvedScholarshipsPage } from "@/pages/GetInvolvedScholarshipsPage"
+import { GetInvolvedScholarshipsPage } from "@/views/GetInvolvedScholarshipsPage"
 
 export const metadata: Metadata = {
     title: "Scholarships | BAAFA",

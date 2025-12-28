@@ -1,5 +1,5 @@
 ﻿import { Metadata } from "next"
-import { AboutMediaToolkitPage } from "@/pages/AboutMediaToolkitPage"
+import { AboutMediaToolkitPage } from "@/views/AboutMediaToolkitPage"
 
 export const metadata: Metadata = {
     title: "Media Toolkit | BAAFA",

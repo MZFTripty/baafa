@@ -1,5 +1,5 @@
 ﻿import { Metadata } from "next"
-import { AboutBangladeshiLegionFamilyPage } from "@/pages/AboutBangladeshiLegionFamilyPage"
+import { AboutBangladeshiLegionFamilyPage } from "@/views/AboutBangladeshiLegionFamilyPage"
 
 export const metadata: Metadata = {
     title: "Legion Family | BAAFA",

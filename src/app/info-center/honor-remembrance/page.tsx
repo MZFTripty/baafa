@@ -1,5 +1,5 @@
 ﻿import { Metadata } from "next"
-import { InfoCenterHonorRemembrancePage } from "@/pages/InfoCenterHonorRemembrancePage"
+import { InfoCenterHonorRemembrancePage } from "@/views/InfoCenterHonorRemembrancePage"
 
 export const metadata: Metadata = {
     title: "Honor & Remembrance | BAAFA",

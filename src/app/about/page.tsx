@@ -1,5 +1,5 @@
 ﻿import { Metadata } from "next"
-import { AboutPage } from "@/pages/AboutPage"
+import { AboutPage } from "@/views/AboutPage"
 
 export const metadata: Metadata = {
     title: "About BAAFA - Our Mission & Leadership",

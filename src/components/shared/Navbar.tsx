@@ -43,6 +43,7 @@ export function Navbar() {
     }, [isOpen])
 
     const isActive = (path: string) => {
+        if (!pathname) return false
         if (path === "/") return pathname === "/"
         return pathname.startsWith(path)
     }
@@ -193,7 +194,7 @@ export function Navbar() {
                                     ))}
                                 </div>
 
-                                
+
                             </div>
                         </div>
                     </motion.div>
