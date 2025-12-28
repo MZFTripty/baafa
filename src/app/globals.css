@@ -112,6 +112,8 @@
     color: var(--foreground) !important;
     min-height: 100vh;
     transition: background-color 0.5s ease, color 0.5s ease;
+    overflow-x: hidden !important;
+    width: 100%;
   }
 }
 
@@ -159,13 +161,13 @@
 
 /* Background Flag Utilities */
 .bg-flag-bd {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 600'%33%3Crect width='1000' height='600' fill='%23006a4e'/%3E%3Ccircle cx='450' cy='300' r='150' fill='%23f42a41'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 600'%3E%3Crect width='1000' height='600' fill='%23006a4e'/%3E%3Ccircle cx='450' cy='300' r='150' fill='%23f42a41'/%3E%3C/svg%3E");
   background-size: cover;
   background-position: center;
 }
 
 .bg-flag-usa {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7410 3900'%33%3Crect width='7410' height='3900' fill='%23b22234'/%3E%3Cpath d='M0,300H7410M0,900H7410M0,1500H7410M0,2100H7410M0,2700H7410M0,3300H7410' stroke='%23fff' stroke-width='300'/%3E%3Crect width='2964' height='2100' fill='%233c3b6e'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7410 3900'%3E%3Crect width='7410' height='3900' fill='%23b22234'/%3E%3Cpath d='M0,300H7410M0,900H7410M0,1500H7410M0,2100H7410M0,2700H7410M0,3300H7410' stroke='%23fff' stroke-width='300'/%3E%3Crect width='2964' height='2100' fill='%233c3b6e'/%3E%3C/svg%3E");
   background-size: cover;
   background-position: center;
 }
@@ -185,44 +187,55 @@
   }
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar - Minimal */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #002868;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(197, 160, 102, 0.4);
-  border-radius: 5px;
-  border: 3px solid #002868;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
-/* Sidebar scrollbar - FORCED CLASSIC UI */
-.sidebar-scrollbar {
-  scrollbar-width: auto !important;
-  scrollbar-color: #888 #eee !important;
-  -webkit-overflow-scrolling: touch !important;
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
 }
 
-.sidebar-scrollbar::-webkit-scrollbar {
-  width: 12px !important;
-  display: block !important;
+/* Global Responsive Refinements */
+@media (max-width: 400px) {
+
+  /* Scale down aggressive display headings */
+  .text-5xl {
+    font-size: 2.25rem !important;
+    /* Approx 36px */
+    letter-spacing: -0.02em !important;
+  }
+
+  .text-3xl {
+    font-size: 1.6rem !important;
+    /* Approx 25px */
+  }
+
+  /* Specific hero tracking fix */
+  h1.text-5xl,
+  h2.text-5xl {
+    line-height: 0.95 !important;
+  }
+
+  /* Paddings for very narrow screens */
+  .px-4 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }
 
-.sidebar-scrollbar::-webkit-scrollbar-track {
-  background: #eee !important;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2) !important;
-}
-
-.sidebar-scrollbar::-webkit-scrollbar-thumb {
-  background: #888 !important;
-  border-radius: 10px !important;
-  border: 3px solid #eee !important;
-}
-
-.sidebar-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #555 !important;
+@media (max-width: 350px) {
+  .text-5xl {
+    font-size: 2rem !important;
+    /* Approx 32px */
+  }
 }

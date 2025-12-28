@@ -10,11 +10,57 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 
 const navigation = [
-    { name: "About", href: "/about" },
-    { name: "Advocacy", href: "/advocacy" },
-    { name: "Membership & services", href: "/membership" },
-    { name: "Get involved", href: "/get-involved" },
-    { name: "Information center", href: "/info-center" },
+    {
+        name: "About",
+        href: "/about",
+        subItems: [
+            { name: "Organization", href: "/about/organization" },
+            { name: "Leadership", href: "/about/leadership" },
+            { name: "Reports", href: "/about/reports" },
+            { name: "Media Toolkit", href: "/about/media-toolkit" },
+            { name: "Family", href: "/about/bangladeshi-legion-family" },
+        ]
+    },
+    {
+        name: "Advocacy",
+        href: "/advocacy",
+        subItems: [
+            { name: "Be The One", href: "/advocacy/be-the-one" },
+            { name: "Legislative", href: "/advocacy/legislative" },
+            { name: "National Affairs", href: "/advocacy/national-affairs" },
+            { name: "Youth Support", href: "/advocacy/youth-support" },
+        ]
+    },
+    {
+        name: "Membership & services",
+        href: "/membership",
+        subItems: [
+            { name: "Join", href: "/membership/join-the-bangladeshi-legion" },
+            { name: "Renew", href: "/membership/renew-membership" },
+            { name: "Discount", href: "/membership/member-discount" },
+            { name: "Resources", href: "/membership/resources" },
+            { name: "Veterans Services", href: "/membership/veterans-services" },
+        ]
+    },
+    {
+        name: "Get involved",
+        href: "/get-involved",
+        subItems: [
+            { name: "Youth Programs", href: "/get-involved/youth-programs" },
+            { name: "Community", href: "/get-involved/community-programs" },
+            { name: "Meetings", href: "/get-involved/national-meetings" },
+            { name: "Scholarships", href: "/get-involved/scholarships" },
+        ]
+    },
+    {
+        name: "Information center",
+        href: "/info-center",
+        subItems: [
+            { name: "Calendar", href: "/info-center/calendar" },
+            { name: "Training", href: "/info-center/bangladeshi-legion-training" },
+            { name: "Honor & Remembrance", href: "/info-center/honor-remembrance" },
+        ]
+    },
 ]
 
 const topActions = [
@@ -178,19 +224,41 @@ export function Navbar() {
                                 <div className="flex flex-col items-center">
                                     <div className="w-full h-px bg-white/20 mb-8" />
                                     {navigation.map((item) => (
-                                        <Link
-                                            key={item.name}
-                                            href={item.href}
-                                            className={cn(
-                                                "w-full text-center py-5 text-xl font-black uppercase tracking-[0.4em] transition-all rounded-xl",
-                                                isActive(item.href)
-                                                    ? "text-baafa-gold bg-white/5"
-                                                    : "text-white hover:text-baafa-gold hover:bg-white/10"
+                                        <div key={item.name} className="w-full flex flex-col items-center">
+                                            <Link
+                                                href={item.href}
+                                                className={cn(
+                                                    "w-full text-center py-5 text-xl font-black uppercase tracking-[0.4em] transition-all rounded-xl",
+                                                    isActive(item.href)
+                                                        ? "text-baafa-gold bg-white/5"
+                                                        : "text-white hover:text-baafa-gold hover:bg-white/10"
+                                                )}
+                                                onClick={() => setIsOpen(false)}
+                                            >
+                                                {item.name}
+                                            </Link>
+
+                                            {/* Sub Items */}
+                                            {item.subItems && (
+                                                <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 px-4 mt-2 mb-6">
+                                                    {item.subItems.map((sub) => (
+                                                        <Link
+                                                            key={sub.name}
+                                                            href={sub.href}
+                                                            className={cn(
+                                                                "text-[10px] font-bold uppercase tracking-[0.2em] transition-all whitespace-nowrap",
+                                                                isActive(sub.href)
+                                                                    ? "text-white border-b border-white/40 pb-0.5"
+                                                                    : "text-white/40 hover:text-white"
+                                                            )}
+                                                            onClick={() => setIsOpen(false)}
+                                                        >
+                                                            {sub.name}
+                                                        </Link>
+                                                    ))}
+                                                </div>
                                             )}
-                                            onClick={() => setIsOpen(false)}
-                                        >
-                                            {item.name}
-                                        </Link>
+                                        </div>
                                     ))}
                                 </div>
 

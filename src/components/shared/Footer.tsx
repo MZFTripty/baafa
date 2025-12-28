@@ -153,7 +153,7 @@ export function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="mt-20 pt-12 border-t border-white/5 flex flex-col items-center justify-between gap-8 md:flex-row">
-                    <div className="flex flex-wrap justify-center gap-8">
+                    <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
                         {footerLinks.legal.map((link) => (
                             <Link
                                 key={link.label}
@@ -167,8 +167,6 @@ export function Footer() {
 
                     <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-white/20 italic">
                         <span>&copy; {new Date().getFullYear()} BAAFA Organization</span>
-                        <span className="mx-2 text-baafa-red">|</span>
-                        <span>Made with Honor</span>
                     </div>
                 </div>
             </div>

@@ -27,7 +27,7 @@ export function CategoryPage({ title, summary, sections, accentColor = "baafa-go
     return (
         <div className="flex flex-col min-h-screen bg-white">
             {/* Header Section - Patriotic Light Design */}
-            <section className="relative pt-40 pb-24 overflow-hidden">
+            <section className="relative pt-4 sm:pt-8 lg:pt-28 pb-16 overflow-hidden">
                 {/* Subtle Flag BG */}
                 <div className="absolute inset-0 -z-10 bg-flag-bd opacity-[0.03] scale-150 rotate-[-10deg]" />
 
@@ -36,20 +36,20 @@ export function CategoryPage({ title, summary, sections, accentColor = "baafa-go
                         <motion.div
                             initial={{ opacity: 0, y: 15 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="space-y-10"
+                            className="space-y-6"
                         >
                             <div className="flex items-center gap-4 text-baafa-red">
                                 <Star className="h-6 w-6 fill-baafa-red" />
                                 <span className="text-sm font-black uppercase tracking-[0.5em]">Official Department</span>
                             </div>
 
-                            <h1 className="text-5xl font-[1000] tracking-tighter text-baafa-navy uppercase italic lg:text-7xl leading-[0.8]">
+                            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-[1000] tracking-tighter text-baafa-navy uppercase italic leading-[0.8]">
                                 {title}
                             </h1>
 
                             <div className="max-w-2xl relative">
                                 <div className="absolute -left-8 top-0 bottom-0 w-2 bg-baafa-red" />
-                                <p className="text-xl text-baafa-navy/70 font-bold leading-tight pl-8 uppercase tracking-tight">
+                                <p className="text-lg sm:text-xl text-baafa-navy/70 font-bold leading-tight pl-8 uppercase tracking-tight">
                                     {summary}
                                 </p>
                             </div>
@@ -88,7 +88,7 @@ export function CategoryPage({ title, summary, sections, accentColor = "baafa-go
             </section>
 
             {/* Sections Area - Clean White Grid */}
-            <section className="relative py-32 flex-1">
+            <section className="relative py-16 flex-1">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
                     <SubPageSelector items={sections} />
                 </div>

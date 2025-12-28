@@ -17,36 +17,36 @@ interface GenericSubPageProps {
 
 export function GenericSubPage({ title, description, image, parentHref, parentLabel, children }: GenericSubPageProps) {
     return (
-        <div className="min-h-screen bg-white pt-32 pb-20">
+        <div className="min-h-screen bg-white pt-4 sm:pt-8 lg:pt-28 pb-16">
             {/* Navigation Breadcrumb */}
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-10">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-6">
                 <Button variant="ghost" asChild className="pl-0 hover:bg-transparent hover:text-baafa-red text-baafa-navy/50 transition-colors">
-                    <Link href={parentHref} className="flex items-center gap-2 font-bold uppercase tracking-widest text-sm">
+                    <Link href={parentHref} className="flex items-center gap-2 font-bold uppercase tracking-widest text-xs">
                         <ArrowLeft className="h-4 w-4" /> Back to {parentLabel}
                     </Link>
                 </Button>
             </div>
 
             {/* Header */}
-            <section className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-20">
-                <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <section className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-12">
+                <div className="grid lg:grid-cols-2 gap-12 items-start">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="space-y-8"
+                        className="space-y-6"
                     >
                         <div className="flex items-center gap-3 text-baafa-red">
                             <Star className="h-5 w-5 fill-baafa-red" />
                             <span className="text-xs font-black uppercase tracking-[0.3em]">Sub-Department</span>
                         </div>
 
-                        <h1 className="text-6xl font-[1000] text-baafa-navy uppercase italic tracking-tighter leading-[0.9]">
+                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-[1000] text-baafa-navy uppercase italic tracking-tighter leading-[0.9]">
                             {title}
                         </h1>
 
                         <div className="h-1 w-20 bg-baafa-gold rounded-full" />
 
-                        <p className="text-xl text-baafa-navy/70 font-medium leading-relaxed">
+                        <p className="text-lg sm:text-xl text-baafa-navy/70 font-medium leading-relaxed">
                             {description}
                         </p>
                     </motion.div>

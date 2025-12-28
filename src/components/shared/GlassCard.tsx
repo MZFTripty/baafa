@@ -50,7 +50,7 @@ export const GlassCard = ({ children, className }: GlassCardProps) => {
                 transformStyle: "preserve-3d",
             }}
             className={cn(
-                "relative rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] transition-all duration-300 hover:bg-white/[0.08] hover:border-baafa-gold/40 hover:shadow-baafa-gold/10 group",
+                "relative rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 sm:p-8 backdrop-blur-xl shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] transition-all duration-300 hover:bg-white/[0.08] hover:border-baafa-gold/40 hover:shadow-baafa-gold/10 group overflow-hidden",
                 "before:absolute before:inset-0 before:rounded-[2rem] before:bg-gradient-to-br before:from-baafa-gold/20 before:to-transparent before:opacity-0 before:transition-opacity hover:before:opacity-100",
                 className
             )}

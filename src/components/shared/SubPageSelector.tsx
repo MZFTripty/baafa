@@ -33,7 +33,7 @@ export function SubPageSelector({ items }: SubPageSelectorProps) {
                     viewport={{ once: true }}
                 >
                     <Link href={item.href} className="block h-full">
-                        <GlassCard className="group relative h-full flex flex-col p-10 gap-6 border-2 border-baafa-navy/10 hover:border-baafa-red bg-white hover:bg-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
+                        <GlassCard className="group relative h-full flex flex-col p-6 sm:p-10 gap-6 border-2 border-baafa-navy/10 hover:border-baafa-red bg-white hover:bg-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
                             {/* Decorative Elements or Image */}
                             {item.image ? (
                                 <div className="absolute top-0 right-0 w-40 h-40 opacity-30 group-hover:opacity-100 transition-all duration-500 transform translate-x-10 -translate-y-8 group-hover:translate-x-4 group-hover:translate-y-4 group-hover:rotate-0 rotate-12 grayscale group-hover:grayscale-0">

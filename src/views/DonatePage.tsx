@@ -57,7 +57,7 @@ export function DonatePage() {
     return (
         <div className="min-h-screen bg-white">
             {/* Hero Section */}
-            <section className="relative pt-40 pb-24 overflow-hidden">
+            <section className="relative pt-4 sm:pt-8 lg:pt-28 pb-16 overflow-hidden">
                 <div className="absolute inset-0 -z-10 bg-gradient-to-br from-baafa-navy/5 via-baafa-red/5 to-baafa-gold/5" />
                 <div className="absolute inset-0 -z-10 bg-flag-usa opacity-[0.02] scale-150" />
 
@@ -65,18 +65,18 @@ export function DonatePage() {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-center space-y-8 max-w-4xl mx-auto"
+                        className="text-center space-y-6 max-w-4xl mx-auto"
                     >
                         <div className="flex items-center justify-center gap-3 text-baafa-red">
-                            <Heart className="h-8 w-8 fill-baafa-red" />
+                            <Heart className="h-6 w-6 fill-baafa-red" />
                             <span className="text-sm font-black uppercase tracking-[0.5em]">Support Our Mission</span>
                         </div>
 
-                        <h1 className="text-5xl lg:text-6xl font-[1000] text-baafa-navy uppercase italic tracking-tighter leading-[0.85]">
+                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-[1000] text-baafa-navy uppercase italic tracking-tighter leading-[0.85]">
                             Invest in Our Heroes
                         </h1>
 
-                        <p className="text-2xl text-baafa-navy/70 font-bold leading-relaxed max-w-3xl mx-auto">
+                        <p className="text-lg sm:text-2xl text-baafa-navy/70 font-bold leading-relaxed max-w-3xl mx-auto">
                             Your contribution directly supports Bangladeshi American service members, veterans, and their families through advocacy, education, and community programs.
                         </p>
 
@@ -121,9 +121,9 @@ export function DonatePage() {
                                     transition={{ delay: index * 0.1 }}
                                     viewport={{ once: true }}
                                 >
-                                    <GlassCard className={`relative h-full flex flex-col p-8 ${tier.featured
-                                            ? 'border-4 border-baafa-red bg-white shadow-2xl scale-105'
-                                            : 'border-2 border-baafa-navy/10 bg-white shadow-xl'
+                                    <GlassCard className={`relative h-full flex flex-col p-6 sm:p-8 ${tier.featured
+                                        ? 'border-4 border-baafa-red bg-white shadow-2xl lg:scale-105'
+                                        : 'border-2 border-baafa-navy/10 bg-white shadow-xl'
                                         }`}>
                                         {tier.featured && (
                                             <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-baafa-red text-white text-xs font-black uppercase tracking-widest rounded-full shadow-lg">
@@ -164,8 +164,8 @@ export function DonatePage() {
 
                                             <Button
                                                 className={`w-full font-black uppercase tracking-wider ${tier.featured
-                                                        ? 'bg-baafa-red hover:bg-baafa-red/90 text-white'
-                                                        : 'bg-baafa-navy hover:bg-baafa-navy/90 text-white'
+                                                    ? 'bg-baafa-red hover:bg-baafa-red/90 text-white'
+                                                    : 'bg-baafa-navy hover:bg-baafa-navy/90 text-white'
                                                     }`}
                                             >
                                                 Donate ${tier.amount}
