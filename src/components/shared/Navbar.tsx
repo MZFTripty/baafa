@@ -168,30 +168,50 @@ export function Navbar() {
                                 {/* Main Links */}
                                 <div className="flex flex-col items-center">
                                     <div className="w-full h-px bg-white/20 mb-8" />
-                                    {data.navigation.main.map((item) => (
-                                        <div key={item.label} className="w-full flex flex-col items-center">
-                                            <Link
-                                                href={item.href}
-                                                className={cn(
-                                                    "w-full text-center py-5 text-xl font-black uppercase tracking-[0.4em] transition-all rounded-xl",
-                                                    isActive(item.href)
-                                                        ? "text-baafa-gold bg-white/5"
-                                                        : "text-white hover:text-baafa-gold hover:bg-white/10"
-                                                )}
-                                                onClick={() => setIsOpen(false)}
-                                            >
-                                                {item.label}
-                                            </Link>
+                                    {data.navigation.main.map((item) => {
+                                        // Dynamic sub-item lookup
+                                        const sectionKey = (item as any).key
+                                        const siteSection = sectionKey ? (data as any)[sectionKey] : null
+                                        const subItems = siteSection?.sections || []
 
-                                            {/* Sub Items logic would need to map properly to siteData structure if subs were in main array, 
-                                                but siteData flat structure might need adjustment if we want auto sub-links.
-                                                For now we will simplify mobile menu or map manually if structure differs.
-                                                Let's assume flatter structure for performance unless specific subItems exist in schema.
-                                                Checking siteData, main array doesn't have subItems. 
-                                                So we will just render main links. 
-                                            */}
-                                        </div>
-                                    ))}
+                                        return (
+                                            <div key={item.label} className="w-full flex flex-col items-center">
+                                                <Link
+                                                    href={item.href}
+                                                    className={cn(
+                                                        "w-full text-center py-5 text-xl font-black uppercase tracking-[0.4em] transition-all rounded-xl",
+                                                        isActive(item.href)
+                                                            ? "text-baafa-gold bg-white/5"
+                                                            : "text-white hover:text-baafa-gold hover:bg-white/10"
+                                                    )}
+                                                    onClick={() => setIsOpen(false)}
+                                                >
+                                                    {item.label}
+                                                </Link>
+
+                                                {/* Restored Sub Items */}
+                                                {subItems.length > 0 && (
+                                                    <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 px-4 mt-2 mb-6">
+                                                        {subItems.map((sub: any) => (
+                                                            <Link
+                                                                key={sub.title}
+                                                                href={sub.href || `${item.href}/${sub.id}`}
+                                                                className={cn(
+                                                                    "text-[10px] font-bold uppercase tracking-[0.2em] transition-all whitespace-nowrap",
+                                                                    isActive(sub.href || `${item.href}/${sub.id}`)
+                                                                        ? "text-white border-b border-white/40 pb-0.5"
+                                                                        : "text-white/40 hover:text-white"
+                                                                )}
+                                                                onClick={() => setIsOpen(false)}
+                                                            >
+                                                                {sub.title}
+                                                            </Link>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        )
+                                    })}
                                 </div>
 
 

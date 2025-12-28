@@ -21,23 +21,28 @@ export const siteData = {
         "main": [
             {
                 "label": "About",
-                "href": "/about"
+                "href": "/about",
+                "key": "about"
             },
             {
                 "label": "Advocacy",
-                "href": "/advocacy"
+                "href": "/advocacy",
+                "key": "advocacy"
             },
             {
                 "label": "Membership & Services",
-                "href": "/membership"
+                "href": "/membership",
+                "key": "membership"
             },
             {
                 "label": "Get Involved",
-                "href": "/get-involved"
+                "href": "/get-involved",
+                "key": "get-involved"
             },
             {
                 "label": "Information Center",
-                "href": "/info-center"
+                "href": "/info-center",
+                "key": "info-center"
             }
         ]
     },
