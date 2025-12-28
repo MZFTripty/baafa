@@ -8,36 +8,40 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft, CheckCircle2, Shield, Info, ExternalLink } from "lucide-react"
 
+import { siteData } from "@/data/siteData"
+
 export default function SubPage({ params }: { params: { category: string, slug: string } }) {
-    const [data, setData] = React.useState<any>(null)
+    // We can directly access data based on params. 
+    // In a real server component we would await params, but this seems to be a client component ("use client").
+    // Actually, in Next.js 15+, params is a Promise even in client components if used in specific ways, 
+    // but here we can just use React.use() or unwrapping. 
+    // The previous code used useEffect to unwrap params. Let's keep that pattern for safety if on latest Next.js,
+    // OR considering we want "optimistic/instant", we might assume params are available or use the unwrap.
+
+    // However, to make it truly instant/optimistic, we want to avoid "Loading..." spinner.
+    // Let's use the unwrapped params if already available, or just render. 
+    // But since `resolvedParams` was a state, it caused a re-render.
+
+    // Simplification: We will try to read params directly if possible, or use the hook.
+    // If we must unwrap, we can't be 100% synchronous first render unless we use `use(params)`.
+    // Let's assume standard behavior for now but speed up the data fetch part.
+
     const [resolvedParams, setResolvedParams] = React.useState<any>(null)
 
-    // React 19 / Next.js 15 requires unwrap of params
     React.useEffect(() => {
         Promise.resolve(params).then(p => setResolvedParams(p))
     }, [params])
 
-    React.useEffect(() => {
-        if (!resolvedParams) return
+    if (!resolvedParams) return null // Minimal flash, or better: performant shell
 
-        fetch("/data.json")
-            .then((res) => res.json())
-            .then((d) => {
-                const catId = resolvedParams.category
-                const cat = d[catId]
-                const section = cat?.sections.find((s: any) => s.id === resolvedParams.slug)
-                setData({ category: catId, section })
-            })
-    }, [resolvedParams])
+    const catId = resolvedParams.category as keyof typeof siteData
+    const cat = siteData[catId] as any
+    const section = cat?.sections?.find((s: any) => s.id === resolvedParams.slug)
 
-    if (!data || !data.section) return (
-        <div className="flex h-screen items-center justify-center bg-baafa-navy">
-            <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                className="h-12 w-12 border-4 border-baafa-gold border-t-transparent rounded-full"
-            />
-        </div>
+    const data = { category: catId, section }
+
+    if (!data.section) return (
+        <div className="flex h-screen items-center justify-center text-white">Section not found</div>
     )
 
     return (

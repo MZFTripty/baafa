@@ -13,13 +13,17 @@ export const GlassCard = ({ children, className }: GlassCardProps) => {
     const x = useMotionValue(0)
     const y = useMotionValue(0)
 
-    const mouseXSpring = useSpring(x)
-    const mouseYSpring = useSpring(y)
+    // Reduced spring config for better performance (less oscillation = less calc)
+    const springConfig = { damping: 20, stiffness: 90, mass: 0.5 }
+    const mouseXSpring = useSpring(x, springConfig)
+    const mouseYSpring = useSpring(y, springConfig)
 
-    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["25deg", "-25deg"])
-    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-25deg", "25deg"])
+    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["15deg", "-15deg"])
+    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-15deg", "15deg"])
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        // Debounce or simplification: only calc if desktop? 
+        // For now, optimize the React logic.
         const rect = e.currentTarget.getBoundingClientRect()
         const width = rect.width
         const height = rect.height
@@ -30,13 +34,12 @@ export const GlassCard = ({ children, className }: GlassCardProps) => {
         x.set(xPct)
         y.set(yPct)
 
-        // Update CSS variables for radial gradient follow
         e.currentTarget.style.setProperty("--mouse-x", `${mouseX}px`)
         e.currentTarget.style.setProperty("--mouse-y", `${mouseY}px`)
     }
 
     const handleMouseLeave = () => {
-        x.set(0)
+        x.set(0) // Reset smoothly
         y.set(0)
     }
 
@@ -50,24 +53,25 @@ export const GlassCard = ({ children, className }: GlassCardProps) => {
                 transformStyle: "preserve-3d",
             }}
             className={cn(
-                "relative rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 sm:p-8 backdrop-blur-xl shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] transition-all duration-300 hover:bg-white/[0.08] hover:border-baafa-gold/40 hover:shadow-baafa-gold/10 group overflow-hidden",
-                "before:absolute before:inset-0 before:rounded-[2rem] before:bg-gradient-to-br before:from-baafa-gold/20 before:to-transparent before:opacity-0 before:transition-opacity hover:before:opacity-100",
+                "relative rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 sm:p-8 backdrop-blur-md shadow-lg transition-all duration-300 hover:bg-white/[0.08] hover:border-baafa-gold/40 group overflow-hidden will-change-transform",
+                "transform-gpu", // Hardware acceleration
                 className
             )}
         >
             <div
                 style={{
-                    transform: "translateZ(100px)",
+                    transform: "translateZ(50px)", // Reduced depth for less paint cost
                     transformStyle: "preserve-3d",
                 }}
                 className="relative z-10"
             >
                 {children}
             </div>
+            {/* Optimized radial gradient (using simpler opacity transition) */}
             <div
-                className="absolute -inset-px rounded-[2rem] opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none"
+                className="absolute -inset-px rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none will-change-[opacity]"
                 style={{
-                    background: "radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(197, 160, 102, 0.15), transparent 80%)",
+                    background: "radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(197, 160, 102, 0.1), transparent 80%)",
                 }}
             />
         </motion.div>

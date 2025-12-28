@@ -9,65 +9,10 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 
-const navigation = [
-    {
-        name: "About",
-        href: "/about",
-        subItems: [
-            { name: "Organization", href: "/about/organization" },
-            { name: "Leadership", href: "/about/leadership" },
-            { name: "Reports", href: "/about/reports" },
-            { name: "Media Toolkit", href: "/about/media-toolkit" },
-            { name: "Family", href: "/about/bangladeshi-legion-family" },
-        ]
-    },
-    {
-        name: "Advocacy",
-        href: "/advocacy",
-        subItems: [
-            { name: "Be The One", href: "/advocacy/be-the-one" },
-            { name: "Legislative", href: "/advocacy/legislative" },
-            { name: "National Affairs", href: "/advocacy/national-affairs" },
-            { name: "Youth Support", href: "/advocacy/youth-support" },
-        ]
-    },
-    {
-        name: "Membership & services",
-        href: "/membership",
-        subItems: [
-            { name: "Join", href: "/membership/join-the-bangladeshi-legion" },
-            { name: "Renew", href: "/membership/renew-membership" },
-            { name: "Discount", href: "/membership/member-discount" },
-            { name: "Resources", href: "/membership/resources" },
-            { name: "Veterans Services", href: "/membership/veterans-services" },
-        ]
-    },
-    {
-        name: "Get involved",
-        href: "/get-involved",
-        subItems: [
-            { name: "Youth Programs", href: "/get-involved/youth-programs" },
-            { name: "Community", href: "/get-involved/community-programs" },
-            { name: "Meetings", href: "/get-involved/national-meetings" },
-            { name: "Scholarships", href: "/get-involved/scholarships" },
-        ]
-    },
-    {
-        name: "Information center",
-        href: "/info-center",
-        subItems: [
-            { name: "Calendar", href: "/info-center/calendar" },
-            { name: "Training", href: "/info-center/bangladeshi-legion-training" },
-            { name: "Honor & Remembrance", href: "/info-center/honor-remembrance" },
-        ]
-    },
-]
+import { siteData as data } from "@/data/siteData"
 
-const topActions = [
-    { name: "Join", href: "/membership/join-the-bangladeshi-legion", variant: "default" as const },
-    { name: "Renew", href: "/membership/renew-membership", variant: "outline" as const },
-    { name: "Donate", href: "/donate", variant: "glass" as const },
-]
+// Use data from siteData
+// Removed local navigation and topActions arrays
 
 export function Navbar() {
     const [isOpen, setIsOpen] = React.useState(false)
@@ -120,20 +65,20 @@ export function Navbar() {
                         </Link>
 
                         <div className="hidden items-center gap-4 md:flex">
-                            {topActions.map((action) => (
+                            {data.navigation.topActions.map((action) => (
                                 <Button
-                                    key={action.name}
-                                    variant={action.variant}
+                                    key={action.label}
+                                    variant={action.label === "Join" ? "default" : action.label === "Renew" ? "outline" : "glass"}
                                     size="sm"
                                     className={cn(
                                         "text-xs font-black uppercase tracking-widest px-6 h-9 rounded-full transition-all hover:scale-105",
-                                        action.name === "Join" && "bg-white text-[#B22234] hover:bg-white/90 shadow-lg",
-                                        action.name === "Renew" && "bg-baafa-gold text-white border-2 border-baafa-gold hover:bg-baafa-gold/90",
-                                        action.name === "Donate" && "bg-baafa-navy text-white border-2 border-baafa-navy hover:bg-baafa-navy/90"
+                                        action.label === "Join" && "bg-white text-[#B22234] hover:bg-white/90 shadow-lg",
+                                        action.label === "Renew" && "bg-baafa-gold text-white border-2 border-baafa-gold hover:bg-baafa-gold/90",
+                                        action.label === "Donate" && "bg-baafa-navy text-white border-2 border-baafa-navy hover:bg-baafa-navy/90"
                                     )}
                                     asChild
                                 >
-                                    <Link href={action.href}>{action.name}</Link>
+                                    <Link href={action.href}>{action.label}</Link>
                                 </Button>
                             ))}
                         </div>
@@ -154,9 +99,9 @@ export function Navbar() {
             <div className="hidden bg-white/95 backdrop-blur-md border-b border-baafa-navy/10 md:block">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex h-12 items-center justify-center gap-10">
-                        {navigation.map((item) => (
+                        {data.navigation.main.map((item) => (
                             <Link
-                                key={item.name}
+                                key={item.label}
                                 href={item.href}
                                 className={cn(
                                     "relative py-1 text-xs font-black uppercase tracking-[0.2em] transition-all hover:text-baafa-red",
@@ -165,7 +110,7 @@ export function Navbar() {
                                         : "text-baafa-navy/60"
                                 )}
                             >
-                                {item.name}
+                                {item.label}
                                 {isActive(item.href) && (
                                     <motion.div
                                         layoutId="nav-underline"
@@ -210,12 +155,12 @@ export function Navbar() {
                             <div className="px-8 space-y-12">
                                 {/* Top Buttons */}
                                 <div className="flex flex-col gap-4">
-                                    {topActions.map((action) => (
-                                        <Button key={action.name} variant={action.variant} className={cn(
+                                    {data.navigation.topActions.map((action) => (
+                                        <Button key={action.label} variant={action.label === "Join" ? "default" : action.label === "Renew" ? "outline" : "glass"} className={cn(
                                             "w-full h-14 text-sm font-black uppercase tracking-widest rounded-xl transition-transform active:scale-95 shadow-xl",
-                                            action.name === "Join" ? "bg-white text-[#B22234] hover:bg-white/90" : "bg-white/10 text-white border-white border hover:bg-white/20"
+                                            action.label === "Join" ? "bg-white text-[#B22234] hover:bg-white/90" : "bg-white/10 text-white border-white border hover:bg-white/20"
                                         )} asChild>
-                                            <Link href={action.href} onClick={() => setIsOpen(false)}>{action.name}</Link>
+                                            <Link href={action.href} onClick={() => setIsOpen(false)}>{action.label}</Link>
                                         </Button>
                                     ))}
                                 </div>
@@ -223,8 +168,8 @@ export function Navbar() {
                                 {/* Main Links */}
                                 <div className="flex flex-col items-center">
                                     <div className="w-full h-px bg-white/20 mb-8" />
-                                    {navigation.map((item) => (
-                                        <div key={item.name} className="w-full flex flex-col items-center">
+                                    {data.navigation.main.map((item) => (
+                                        <div key={item.label} className="w-full flex flex-col items-center">
                                             <Link
                                                 href={item.href}
                                                 className={cn(
@@ -235,29 +180,16 @@ export function Navbar() {
                                                 )}
                                                 onClick={() => setIsOpen(false)}
                                             >
-                                                {item.name}
+                                                {item.label}
                                             </Link>
 
-                                            {/* Sub Items */}
-                                            {item.subItems && (
-                                                <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 px-4 mt-2 mb-6">
-                                                    {item.subItems.map((sub) => (
-                                                        <Link
-                                                            key={sub.name}
-                                                            href={sub.href}
-                                                            className={cn(
-                                                                "text-[10px] font-bold uppercase tracking-[0.2em] transition-all whitespace-nowrap",
-                                                                isActive(sub.href)
-                                                                    ? "text-white border-b border-white/40 pb-0.5"
-                                                                    : "text-white/40 hover:text-white"
-                                                            )}
-                                                            onClick={() => setIsOpen(false)}
-                                                        >
-                                                            {sub.name}
-                                                        </Link>
-                                                    ))}
-                                                </div>
-                                            )}
+                                            {/* Sub Items logic would need to map properly to siteData structure if subs were in main array, 
+                                                but siteData flat structure might need adjustment if we want auto sub-links.
+                                                For now we will simplify mobile menu or map manually if structure differs.
+                                                Let's assume flatter structure for performance unless specific subItems exist in schema.
+                                                Checking siteData, main array doesn't have subItems. 
+                                                So we will just render main links. 
+                                            */}
                                         </div>
                                     ))}
                                 </div>

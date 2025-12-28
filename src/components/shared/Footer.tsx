@@ -17,27 +17,9 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const footerLinks = {
-    navigation: [
-        { label: "About BAAFA", href: "/about" },
-        { label: "Our Advocacy", href: "/advocacy" },
-        { label: "Membership", href: "/membership" },
-        { label: "Get Involved", href: "/get-involved" },
-        { label: "Events & Events", href: "/info-center/media" },
-    ],
-    resources: [
-        { label: "Media Center", href: "/info-center/media" },
-        { label: "Publications", href: "/info-center/publications" },
-        { label: "Training Modules", href: "/info-center/training" },
-        { label: "Portal Login", href: "/portal" },
-        { label: "Contact Us", href: "/contact" },
-    ],
-    legal: [
-        { label: "Privacy Policy", href: "/privacy" },
-        { label: "Terms of Service", href: "/terms" },
-        { label: "Cookie Policy", href: "/cookies" },
-    ]
-}
+import { siteData as data } from "@/data/siteData"
+
+// Use data from siteData instead of local object
 
 export function Footer() {
     return (
@@ -89,7 +71,7 @@ export function Footer() {
                     <div className="lg:col-span-2 space-y-8">
                         <h4 className="text-sm font-black uppercase tracking-[0.3em] text-white">Association</h4>
                         <ul className="space-y-4">
-                            {footerLinks.navigation.map((link) => (
+                            {data.navigation.main.map((link) => (
                                 <li key={link.label}>
                                     <Link
                                         href={link.href}
@@ -107,7 +89,14 @@ export function Footer() {
                     <div className="lg:col-span-2 space-y-8">
                         <h4 className="text-sm font-black uppercase tracking-[0.3em] text-white">Resources</h4>
                         <ul className="space-y-4">
-                            {footerLinks.resources.map((link) => (
+                            {/* Mixing some manual resource links or using specific part of data if available. For now using static list matched to design */}
+                            {[
+                                { label: "Media Center", href: "/info-center/media" },
+                                { label: "Publications", href: "/info-center/publications" },
+                                { label: "Training Modules", href: "/info-center/training" },
+                                { label: "Portal Login", href: "/portal" },
+                                { label: "Contact Us", href: "/contact" },
+                            ].map((link) => (
                                 <li key={link.label}>
                                     <Link
                                         href={link.href}
@@ -154,7 +143,11 @@ export function Footer() {
                 {/* Bottom Bar */}
                 <div className="mt-20 pt-12 border-t border-white/5 flex flex-col items-center justify-between gap-8 md:flex-row">
                     <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
-                        {footerLinks.legal.map((link) => (
+                        {[
+                            { label: "Privacy Policy", href: "/privacy" },
+                            { label: "Terms of Service", href: "/terms" },
+                            { label: "Cookie Policy", href: "/cookies" },
+                        ].map((link) => (
                             <Link
                                 key={link.label}
                                 href={link.href}
