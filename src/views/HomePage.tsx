@@ -90,12 +90,15 @@ export function HomePage() {
               transition={{ delay: 0.2, duration: 0.3 }}
               className="flex flex-wrap justify-center gap-4"
             >
+              <Link href="/membership/join-the-bangladeshi-legion">
               <Button
                 size="lg"
                 className="h-14 bg-[#B22234] !bg-[#B22234] text-white hover:bg-[#B22234]/90 rounded-xl px-10 text-lg font-black tracking-widest transition-all hover:scale-105 shadow-xl mt-2 uppercase italic border-2 border-white/20"
               >
                 JOIN THE LEGION
               </Button>
+              </Link>
+              <Link href="/about/organization">
               <Button
                 size="lg"
                 variant="outline"
@@ -103,6 +106,7 @@ export function HomePage() {
               >
                 OUR MISSION
               </Button>
+              </Link>
             </motion.div>
 
             {/* Hero Image Area */}
